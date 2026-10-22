@@ -1,0 +1,150 @@
+{
+  "status": "running",
+  "started": "2026-10-07T13:47:40+0900",
+  "torch": "2.7.1+cu126",
+  "cuda": "12.6",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "gpu_total_gib": 11.99951171875,
+  "sequence_length": 381,
+  "args": [
+    "predict",
+    "D:\\G\ubc15\uc0ac\\boltz_data\\protein.yaml",
+    "--out_dir",
+    "D:\\G\ubc15\uc0ac\\boltz_data\\results",
+    "--cache",
+    "D:\\G\ubc15\uc0ac\\boltz_data\\cache",
+    "--model",
+    "boltz2",
+    "--accelerator",
+    "gpu",
+    "--devices",
+    "1",
+    "--use_msa_server",
+    "--recycling_steps",
+    "3",
+    "--sampling_steps",
+    "200",
+    "--diffusion_samples",
+    "5",
+    "--max_parallel_samples",
+    "1",
+    "--num_workers",
+    "0",
+    "--preprocessing-threads",
+    "1",
+    "--no_kernels",
+    "--output_format",
+    "mmcif",
+    "--write_full_pae",
+    "--seed",
+    "42"
+  ],
+  "kernel_note": "Native Windows: standard PyTorch CUDA operations; optional cuEquivariance kernels disabled."
+}
+Seed set to 42
+MSA server enabled: https://api.colabfold.com
+MSA server authentication: no credentials provided
+Downloading the CCD data to D:\G�ڻ�\boltz_data\cache\mols.tar. This may take a bit of time. You may change the cache directory with the --cache flag.
+Extracting the CCD data to D:\G�ڻ�\boltz_data\cache\mols. This may take a bit of time. You may change the cache directory with the --cache flag.
+Downloading the Boltz-2 weights to D:\G�ڻ�\boltz_data\cache\boltz2_conf.ckpt. You may change the cache directory with the --cache flag.
+Downloading the Boltz-2 affinity weights to D:\G�ڻ�\boltz_data\cache\boltz2_aff.ckpt. You may change the cache directory with the --cache flag.
+Checking input data.
+Processing 1 inputs with 1 threads.
+
+Generating MSA for D:\G�ڻ�\boltz_data\protein.yaml with 1 protein entities.
+Calling MSA server for target protein with 1 sequences
+MSA server URL: https://api.colabfold.com
+MSA pairing strategy: greedy
+No authentication provided for MSA server
+  0%|          | 0/1 [00:00<?, ?it/s]
+
+  0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+
+SUBMIT:   0%|          | 0/150 [elapsed: 00:00 remaining: ?][A
+
+COMPLETE:   0%|          | 0/150 [elapsed: 00:01 remaining: ?][A
+
+COMPLETE: 100%|##########| 150/150 [elapsed: 00:01 remaining: 00:00][A
+COMPLETE: 100%|##########| 150/150 [elapsed: 00:01 remaining: 00:00]
+Traceback (most recent call last):
+  File "D:\G�ڻ�\boltz_data\.venv\Lib\site-packages\boltz\main.py", line 588, in process_input
+    compute_msa(
+  File "D:\G�ڻ�\boltz_data\.venv\Lib\site-packages\boltz\main.py", line 484, in compute_msa
+    unpaired_msa = run_mmseqs2(
+                   ^^^^^^^^^^^^
+  File "D:\G�ڻ�\boltz_data\.venv\Lib\site-packages\boltz\data\msa\mmseqs2.py", line 266, in run_mmseqs2
+    with tarfile.open(tar_gz_file) as tar_gz:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\tarfile.py", line 1812, in open
+    raise ReadError(f"file could not be opened successfully:\n{error_msgs_summary}")
+tarfile.ReadError: file could not be opened successfully:
+- method gz: ReadError('not a gzip file')
+- method bz2: ReadError('not a bzip2 file')
+- method xz: ReadError('not an lzma file')
+- method tar: ReadError('truncated header')
+Failed to process D:\G�ڻ�\boltz_data\protein.yaml. Skipping. Error: file could not be opened successfully:
+- method gz: ReadError('not a gzip file')
+- method bz2: ReadError('not a bzip2 file')
+- method xz: ReadError('not an lzma file')
+- method tar: ReadError('truncated header').
+
+100%|##########| 1/1 [00:01<00:00,  1.90s/it]
+100%|##########| 1/1 [00:01<00:00,  1.90s/it]
+Using bfloat16 Automatic Mixed Precision (AMP)
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+D:\G�ڻ�\boltz_data\.venv\Lib\site-packages\pytorch_lightning\trainer\connectors\logger_connector\logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+{
+  "status": "failed",
+  "started": "2026-10-07T13:47:40+0900",
+  "torch": "2.7.1+cu126",
+  "cuda": "12.6",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "gpu_total_gib": 11.99951171875,
+  "sequence_length": 381,
+  "args": [
+    "predict",
+    "D:\\G\ubc15\uc0ac\\boltz_data\\protein.yaml",
+    "--out_dir",
+    "D:\\G\ubc15\uc0ac\\boltz_data\\results",
+    "--cache",
+    "D:\\G\ubc15\uc0ac\\boltz_data\\cache",
+    "--model",
+    "boltz2",
+    "--accelerator",
+    "gpu",
+    "--devices",
+    "1",
+    "--use_msa_server",
+    "--recycling_steps",
+    "3",
+    "--sampling_steps",
+    "200",
+    "--diffusion_samples",
+    "5",
+    "--max_parallel_samples",
+    "1",
+    "--num_workers",
+    "0",
+    "--preprocessing-threads",
+    "1",
+    "--no_kernels",
+    "--output_format",
+    "mmcif",
+    "--write_full_pae",
+    "--seed",
+    "42"
+  ],
+  "kernel_note": "Native Windows: standard PyTorch CUDA operations; optional cuEquivariance kernels disabled.",
+  "error": "Traceback (most recent call last):\n  File \"D:\\G\ubc15\uc0ac\\boltz_data\\run_prediction.py\", line 52, in main\n    raise RuntimeError(f\"Expected 5 output structures; found {len(models)}\")\nRuntimeError: Expected 5 output structures; found 0\n",
+  "elapsed_seconds": 172.4287087917328,
+  "peak_gpu_allocated_gib": 0.0079345703125,
+  "peak_gpu_reserved_gib": 0.01953125
+}
+Traceback (most recent call last):
+  File "D:\G�ڻ�\boltz_data\run_prediction.py", line 68, in <module>
+    main()
+  File "D:\G�ڻ�\boltz_data\run_prediction.py", line 52, in main
+    raise RuntimeError(f"Expected 5 output structures; found {len(models)}")
+RuntimeError: Expected 5 output structures; found 0
